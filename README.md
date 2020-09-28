@@ -21,5 +21,5 @@ installed, with no assumptions about other available software.
 
 # Installation Scripts [TODO]
 
-[ ] Create scripts that automatically add selected plugins and configuration options
-    to a Kakoune installation on the current system.
+[] Create scripts that automatically add selected plugins and configuration options
+   to a Kakoune installation on the current system.
