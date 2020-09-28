@@ -10,25 +10,28 @@ read PLUGIN_URL
 
 BASENAME=$(basename $PLUGIN_URL)
 PLUGIN_NAME=${BASENAME%.*}
+PLUGIN_FILESAFE_NAME=$(echo $PLUGIN_NAME | tr [:punct:] -)
 
-echo $PLUGIN_NAME
+# Add plugin submodule
 git submodule add $PLUGIN_URL ./plugins/$PLUGIN_NAME
 
 # Create plugin config file
-PLUGIN_CONFIG_FILE=./plugin-configs/$PLUGIN_NAME-config.kak
+PLUGIN_CONFIG_FILE=./plugin-configs/$PLUGIN_FILESAFE_NAME-config.kak
 cat << EOF > $PLUGIN_CONFIG_FILE
 # Configuration for the \`$PLUGIN_NAME\` plugin
+
+# TODO: Add configuration here
 EOF
 
 # Create plugin install file
-PLUGIN_INSTALL_FILE=./plugin-installs/$PLUGIN_NAME-install.sh
+PLUGIN_INSTALL_FILE=./plugin-installs/$PLUGIN_FILESAFE_NAME-install.sh
 cat << EOF > $PLUGIN_INSTALL_FILE
 #!/bin/sh
 
 mkdir -pv ~/.config/kak/plugins/$PLUGIN_NAME
 
 # TODO: cp relevant files into plugin directory created above
-cp -iv ./plugins/$PLUGIN_NAME ~/.config/kak/plugins/$PLUGIN_NAME
+cp -iv ../plugins/$PLUGIN_NAME ~/.config/kak/plugins/$PLUGIN_NAME
 EOF
 
 # HOLD OPEN FOR DEVELOPMENT
