@@ -16,6 +16,12 @@ installed, with no assumptions about other available software.
 # Plugins
 
 - Add plugins as a sub-module to this repository.
+  ```
+  # From root of repository:
+  git submodule add <plugin clone url> plugins/<plugin-name>
+  git add .
+  git commit -m "Add <plugin-name> submodule"
+  ```
 - Add a <plugin-name>-config.kak file for each plugin that defines the custom
   configuration specific to the plugin.
 
