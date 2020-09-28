@@ -8,6 +8,20 @@ and provide a way to generate a kakrc compatible with any given system I want to
 run Kakoune on, which may not have the dependencies needed for all of the plugins
 included in a full configuration.
 
+# Installation
+
+Clone the repository and all submodules:
+```
+git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakoune.git
+```
+
+To load an explicitly defined subset of the included plugins:
+```
+git clone https://github.com/jordan-yee/dangerscripts-kakoune.git
+git submodule init <list> <of> <submodule> <names>
+git submodule update
+```
+
 # Base kakrc
 
 The kakrc file is a minimal configuration meant to work on any system that has Kakoune
