@@ -36,13 +36,13 @@ chmod +x ./add-plugin.sh
 ```
 
 This script adds 3 things to this repository:
-1. A submodule for the plugin repository in the plugins directory.
-2. A \<plugin-name\>-config.kak file for the plugin in the plugin-configs directory.
+1. A submodule for the plugin repository in the `/plugins` directory.
+2. A `<plugin-name>-config.kak` file for the plugin in the `/plugin-configs` directory.
    - Add necessary configuration for the plugin to this file. This includes source
      statements for .kak scripts, plus other things such as setting user mappings
      and plugin options.
-3. A \<plugin-name\>-install.sh script for the plugin in the plugin-installs directory.
-   - By default a script is generated that copies the plugin repository directory to the ~/.config/kak/plugins/\<plugin-name\> directory.
+3. A `<plugin-name>-install.sh` script for the plugin in the `/plugin-installs` directory.
+   - By default a script is generated that copies the plugin repository directory to the `~/.config/kak/plugins/<plugin-name>-directory`.
 
 # Installation Scripts (TODO)
 
