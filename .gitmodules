@@ -1,0 +1,3 @@
+[submodule "plugins/kakoune-mysticaltutor"]
+	path = plugins/kakoune-mysticaltutor
+	url = https://github.com/caksoylar/kakoune-mysticaltutor.git
