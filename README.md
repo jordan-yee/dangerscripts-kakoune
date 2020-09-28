@@ -29,19 +29,22 @@ installed, and which makes no assumptions about other available software.
 
 # Adding Plugins
 
-- Add plugins as a sub-module in the plugins directory.
-  ```
-  # From root of repository:
-  git submodule add <plugin clone url> plugins/<plugin-name>
-  git add .
-  git commit -m "Add <plugin-name> submodule"
-  ```
-- Add a <plugin-name>-config.kak file for each plugin to the plugin-configs directory
-  that defines the custom configuration specific to the plugin.
-- Add a <plugin-name>-install.sh file for each plugin to the plugin-installs directory
-  that performs the actions needed to install the plugin on the current machine.
+To add a plugin, run the `add-plugin.sh` script.
+```
+chmod +x ./add-plugin.sh
+./add-plugin.sh
+```
 
-# Installation Scripts [TODO]
+This script adds 3 things to this repository:
+1. A submodule for the plugin repository in the plugins directory.
+2. A <plugin-name>-config.kak file for the plugin in the plugin-configs directory.
+   - Add necessary configuration for the plugin to this file. This includes source
+     statements for .kak scripts, plus other things such as setting user mappings
+     and plugin options.
+3. A <plugin-name>-install.sh script for the plugin in the plugin-installs directory.
+   - By default a script is generated that copies the plugin repository directory to the ~/.config/kak/plugins/<plugin-name> directory.
+
+# Installation Scripts (TODO)
 
 - [ ] Create scripts that automatically add selected plugins and configuration options
-  to a Kakoune installation on the current system.
+      to a Kakoune installation on the current system.
