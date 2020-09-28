@@ -11,19 +11,21 @@ included in a full configuration.
 # Base kakrc
 
 The kakrc file is a minimal configuration meant to work on any system that has Kakoune
-installed, with no assumptions about other available software.
+installed, and which makes no assumptions about other available software.
 
-# Plugins
+# Adding Plugins
 
-- Add plugins as a sub-module to this repository.
+- Add plugins as a sub-module in the plugins directory.
   ```
   # From root of repository:
   git submodule add <plugin clone url> plugins/<plugin-name>
   git add .
   git commit -m "Add <plugin-name> submodule"
   ```
-- Add a <plugin-name>-config.kak file for each plugin that defines the custom
-  configuration specific to the plugin.
+- Add a <plugin-name>-config.kak file for each plugin to the plugin-configs directory
+  that defines the custom configuration specific to the plugin.
+- Add a <plugin-name>-install.sh file for each plugin to the plugin-installs directory
+  that performs the actions needed to install the plugin on the current machine.
 
 # Installation Scripts [TODO]
 
