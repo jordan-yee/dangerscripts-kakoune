@@ -66,7 +66,7 @@ create_plugin_install_file () {
     mkdir $SCRIPT_DIR/plugin-installs
     echo "Creating $PLUGIN_INSTALL_FILE..."
     # NOTE: This here document must be indented with tabs!
-	cat << EOF > $PLUGIN_INSTALL_FILE
+	cat <<- EOF > $PLUGIN_INSTALL_FILE
 	#!/bin/sh
 
 	mkdir -pv ~/.config/kak/plugins/$PLUGIN_NAME

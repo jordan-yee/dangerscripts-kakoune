@@ -1,3 +1,6 @@
 [submodule "plugins/smarttab.kak"]
 	path = plugins/smarttab.kak
 	url = https://github.com/andreyorst/smarttab.kak.git
+[submodule "plugins/kakoune-mysticaltutor"]
+	path = plugins/kakoune-mysticaltutor
+	url = https://github.com/caksoylar/kakoune-mysticaltutor.git
