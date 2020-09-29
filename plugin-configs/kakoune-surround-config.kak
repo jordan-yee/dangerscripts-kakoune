@@ -1,6 +1,8 @@
 # Configuration for the `kakoune-surround` plugin
 # https://github.com/h-youhei/kakoune-surround
 
+source ~/.config/kak/plugins/kakoune-surround/surround.kak
+
 declare-user-mode surround
 
 map global surround s ':surround<ret>' -docstring 'surround'
