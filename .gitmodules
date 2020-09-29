@@ -4,3 +4,6 @@
 [submodule "plugins/smarttab.kak"]
 	path = plugins/smarttab.kak
 	url = https://github.com/andreyorst/smarttab.kak.git
+[submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/case.kak"]
+	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/case.kak
+	url = https://gitlab.com/FlyingWombat/case.kak.git
