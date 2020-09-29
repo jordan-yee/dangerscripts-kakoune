@@ -1,5 +1,5 @@
 # dangerscripts-kakoune
-My portable Kakoune configuration.
+A portable Kakoune configuration management project.
 
 # Overview
 
@@ -9,6 +9,15 @@ run Kakoune on, which may not have the dependencies needed for all of the plugin
 included in a full configuration.
 
 # Installation
+
+While you can install or reinstall over an existing set of Kakoune config files,
+the suggested usage is to clear (`rm -rf ~/.config/kak/*`) any existing configs
+before running the install scripts to ensure that you have exactly and only what
+you need.
+
+Later, if you want to make changes to your config, make the changes in this repo
+so that they're backed up, clear the existing configs, and re-run the installation.
+This is not required, but will save time dealing with a lot of warning prompts.
 
 Clone the repository and all submodules:
 ```
@@ -76,5 +85,8 @@ they provide.
 
 # TODO
 
-- [ ] Review configuration scripts to make sure files are sourced as needed.
 - [ ] Handle load order for dependent plugins.
+      - Current strategy: manually reorder kakrc sections after installation as needed.
+- [ ] Make verbose logging conditional.
+- [ ] Improve behavior when reinstalling on the system to add a new plugin.
+      (Only add what's needed)
