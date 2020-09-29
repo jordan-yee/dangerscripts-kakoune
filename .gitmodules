@@ -13,3 +13,6 @@
 [submodule "plugins/kakoune-buffers"]
 	path = plugins/kakoune-buffers
 	url = https://github.com/delapouite/kakoune-buffers
+[submodule "plugins/kakoune-find"]
+	path = plugins/kakoune-find
+	url = https://github.com/occivink/kakoune-find
