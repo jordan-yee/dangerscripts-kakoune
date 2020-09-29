@@ -13,6 +13,9 @@ included in a full configuration.
 Clone the repository and all submodules:
 ```
 git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakoune.git
+
+# If you forget the --recurse-submodules flag, clone the submodules:
+git submodule update --init
 ```
 
 To load an explicitly defined subset of the included plugins:
@@ -63,6 +66,4 @@ they provide.
 # TODO
 
 - [ ] Review configuration scripts to make sure files are sourced as needed.
-- [ ] Create build-kakrc script that appends all config scripts to the base kakrc.
-      - How to handle load order for dependent plugins?
-- [ ] Create install-all script that runs all existing installation scripts.
+- [ ] Handle load order for dependent plugins.
