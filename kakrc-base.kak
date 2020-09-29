@@ -97,9 +97,3 @@ hook global InsertCompletionHide .* %{
 hook global BufCreate .*\.(conf) %{
     set-option buffer filetype sh
 }
-
-# -----------------------------------------------------------------------------
-# Environment-specific Configuration
-
-# use rg for the grep command
-# set-option global grepcmd 'rg --column'
