@@ -4,3 +4,12 @@
 [submodule "plugins/kakoune-mysticaltutor"]
 	path = plugins/kakoune-mysticaltutor
 	url = https://github.com/caksoylar/kakoune-mysticaltutor.git
+[submodule "plugins/auto-pairs.kak"]
+	path = plugins/auto-pairs.kak
+	url = https://github.com/alexherbo2/auto-pairs.kak.git
+[submodule "plugins/case.kak"]
+	path = plugins/case.kak
+	url = https://gitlab.com/FlyingWombat/case.kak.git
+[submodule "plugins/kakoune-buffers"]
+	path = plugins/kakoune-buffers
+	url = https://github.com/delapouite/kakoune-buffers
