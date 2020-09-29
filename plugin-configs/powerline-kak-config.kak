@@ -1,6 +1,9 @@
 # Configuration for the `powerline.kak` plugin
 # https://github.com/jdugan6240/powerline.kak
 
+# Source the main script
+source ~/.config/kak/plugins/powerline.kak/rc/powerline.kak
+
 # Source the modules you want to use:
 source ~/.config/kak/plugins/powerline.kak/rc/modules/bufname.kak
 source ~/.config/kak/plugins/powerline.kak/rc/modules/client.kak
