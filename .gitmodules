@@ -19,3 +19,6 @@
 [submodule "plugins/kakoune-surround"]
 	path = plugins/kakoune-surround
 	url = https://github.com/h-youhei/kakoune-surround
+[submodule "plugins/powerline.kak"]
+	path = plugins/powerline.kak
+	url = https://github.com/jdugan6240/powerline.kak
