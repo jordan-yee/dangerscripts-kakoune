@@ -16,3 +16,6 @@
 [submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-surround"]
 	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-surround
 	url = https://github.com/h-youhei/kakoune-surround
+[submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-buffers"]
+	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-buffers
+	url = https://github.com/delapouite/kakoune-buffers
