@@ -44,7 +44,10 @@ This script adds 3 things to this repository:
 3. A `<plugin-name>-install.sh` script for the plugin in the `/plugin-installs` directory.
    - By default a script is generated that copies the plugin repository directory to the `~/.config/kak/plugins/<plugin-name>-directory`.
 
-# Installation Scripts (TODO)
+# TODO
 
-- [ ] Create scripts that automatically add selected plugins and configuration options
-      to a Kakoune installation on the current system.
+- [ ] Review configuration scripts to make sure files are sourced as needed.
+- [ ] Create build-kakrc script that appends all config scripts to the base kakrc.
+      - How to handle load order for dependent plugins?
+- [ ] Add strategy for handling experimental .kak scripts.
+- [ ] Create install-all script that runs all existing installation scripts.
