@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir -pv ~/.config/kak/plugins/kakoune-mysticaltutor
+mkdir -pv ~/.config/kak/colors
 
 SCRIPT_PATH=$(realpath $0)
 SCRIPT_DIR=$(dirname $SCRIPT_PATH)
