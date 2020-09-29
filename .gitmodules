@@ -22,3 +22,6 @@
 [submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-find"]
 	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-find
 	url = https://github.com/occivink/kakoune-find
+[submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/powerline.kak"]
+	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/powerline.kak
+	url = https://github.com/jdugan6240/powerline.kak
