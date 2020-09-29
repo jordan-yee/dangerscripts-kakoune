@@ -19,3 +19,6 @@
 [submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-buffers"]
 	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-buffers
 	url = https://github.com/delapouite/kakoune-buffers
+[submodule "/home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-find"]
+	path = /home/JYEE/github/jordan-yee/dangerscripts-kakoune/plugins/kakoune-find
+	url = https://github.com/occivink/kakoune-find
