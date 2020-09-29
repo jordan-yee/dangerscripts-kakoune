@@ -16,3 +16,6 @@
 [submodule "plugins/kakoune-find"]
 	path = plugins/kakoune-find
 	url = https://github.com/occivink/kakoune-find
+[submodule "plugins/kakoune-surround"]
+	path = plugins/kakoune-surround
+	url = https://github.com/h-youhei/kakoune-surround
