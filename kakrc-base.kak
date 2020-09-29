@@ -1,9 +1,8 @@
 # -----------------------------------------------------------------------------
 # basic configuration
 
-# NOTE: This colorscheme must be added to $XDG_CONFIG_HOME/kak/colors
-# Default choice: colorscheme solarized-dark-termcolors
-colorscheme mysticaltutor
+# default colorscheme choice
+colorscheme solarized-dark-termcolors
 
 # show line numbers
 add-highlighter global/ number-lines -relative -hlcursor -min-digits 3
@@ -76,9 +75,9 @@ hook global InsertChar k %{ try %{
 
 # tab complete
 # ------------
+
 # TODO: This causes tab to break in insert mode.
 #       I think it has to do with the 'jk' for <esc> hook.
-
 hook global InsertCompletionShow .* %{
     try %{
         execute-keys -draft 'h<a-K>\h<ret>'

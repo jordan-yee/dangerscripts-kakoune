@@ -44,6 +44,10 @@ This script adds 3 things to this repository:
 3. A `<plugin-name>-install.sh` script for the plugin in the `/plugin-installs` directory.
    - By default a script is generated that copies the plugin repository directory to the `~/.config/kak/plugins/<plugin-name>-directory`.
 
+# plugins-local
+
+The plugins-local directory is for stand-alone kak scripts that aren't published to their own plugin repository. This is akin to the rc folder that ships with Kakoune.
+
 # TODO
 
 - [ ] Review configuration scripts to make sure files are sourced as needed.
