@@ -28,36 +28,64 @@ SCRIPT_DIR=$(dirname $SCRIPT_PATH)
 # Add plugin submodule
 
 cd $SCRIPT_DIR
-git submodule add $PLUGIN_URL $SCRIPT_DIR/plugins/$PLUGIN_NAME
+git submodule add $PLUGIN_URL plugins/$PLUGIN_NAME
 
 # ------------------------------------------------------------------------------
 # Create plugin config file
 
-mkdir $SCRIPT_DIR/plugin-configs
 PLUGIN_CONFIG_FILE=$SCRIPT_DIR/plugin-configs/$PLUGIN_FILESAFE_NAME-config.kak
-echo "Creating $PLUGIN_CONFIG_FILE..."
-cat << EOF > $PLUGIN_CONFIG_FILE
-# Configuration for the \`$PLUGIN_NAME\` plugin
-# ${PLUGIN_URL%.git}
 
-# TODO: Add configuration here
-EOF
+create_plugin_config_file () {
+    mkdir $SCRIPT_DIR/plugin-configs
+    echo "Creating $PLUGIN_CONFIG_FILE..."
+    # NOTE: This here document must be indented with tabs!
+	cat <<- EOF > $PLUGIN_CONFIG_FILE
+	# Configuration for the \`$PLUGIN_NAME\` plugin
+	# ${PLUGIN_URL%.git}
+
+	# TODO: Add configuration here
+	EOF
+}
+
+if [ -f "$PLUGIN_CONFIG_FILE" ]; then
+    echo -n "An existing config file for this plugin has been found, replace it? [N/y]: "
+    read REPLACE
+    if [ "$REPLACE" = "y" ]; then
+        create_plugin_config_file
+    else
+        echo "Leaving existing config file as-is..."
+    fi
+fi
 
 # ------------------------------------------------------------------------------
 # Create plugin install file
 
-mkdir $SCRIPT_DIR/plugin-installs
 PLUGIN_INSTALL_FILE=$SCRIPT_DIR/plugin-installs/$PLUGIN_FILESAFE_NAME-install.sh
-echo "Creating $PLUGIN_INSTALL_FILE..."
-cat << EOF > $PLUGIN_INSTALL_FILE
-#!/bin/sh
 
-mkdir -pv ~/.config/kak/plugins/$PLUGIN_NAME
+create_plugin_install_file () {
+    mkdir $SCRIPT_DIR/plugin-installs
+    echo "Creating $PLUGIN_INSTALL_FILE..."
+    # NOTE: This here document must be indented with tabs!
+	cat << EOF > $PLUGIN_INSTALL_FILE
+	#!/bin/sh
 
-SCRIPT_PATH=\$(realpath \$0)
-SCRIPT_DIR=\$(dirname \$SCRIPT_PATH)
-REPO_ROOT_PATH=\$(dirname \$SCRIPT_DIR)
+	mkdir -pv ~/.config/kak/plugins/$PLUGIN_NAME
 
-# TODO: cp relevant files into plugin directory created above
-cp -irv \$REPO_ROOT_PATH/plugins/$PLUGIN_NAME ~/.config/kak/plugins/
-EOF
+	SCRIPT_PATH=\$(realpath \$0)
+	SCRIPT_DIR=\$(dirname \$SCRIPT_PATH)
+	REPO_ROOT_PATH=\$(dirname \$SCRIPT_DIR)
+
+	# TODO: cp relevant files into plugin directory created above
+	cp -irv \$REPO_ROOT_PATH/plugins/$PLUGIN_NAME ~/.config/kak/plugins/
+	EOF
+}
+
+if [ -f "$PLUGIN_INSTALL_FILE" ]; then
+    echo -n "An existing install file for this plugin has been found, replace it? [N/y]: "
+    read REPLACE
+    if [ "$REPLACE" = "y" ]; then
+        create_plugin_install_file
+    else
+        echo "Leaving existing install file as-is..."
+    fi
+fi
