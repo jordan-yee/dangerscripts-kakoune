@@ -25,6 +25,13 @@ git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakou
 
 # If you forget the --recurse-submodules flag, clone the submodules:
 git submodule update --init
+
+# If the above command isn't working right, then init submodules independently:
+git submodule init
+# Then update the clone URLs in .git/config:
+kak .git/config
+# And finally, update the submodules:
+git submodule update
 ```
 
 To load an explicitly defined subset of the included plugins:
@@ -37,13 +44,13 @@ git submodule update
 To interactively select and install plugins and a kakrc containing your custom
 configuration for the selected plugins:
 ```
-chmod +x ./install-kakrc.sh
+# chmod +x ./install-kakrc.sh
 ./install-kakrc.sh
 ```
 
 To install custom rc scripts and enable the local autoload directory:
 ```
-chmod +x ./install-autoload-rc.sh
+# chmod +x ./install-autoload-rc.sh
 ./install-autoload-rc.sh
 ```
 
@@ -82,6 +89,12 @@ with the rc folder that ships with Kakoune. Add your custom .kak scripts here.
 Running the install script will copy the `rc/custom/` directory the user autoload,
 and prompt whether to link the official rc scripts in order to retain the functionality
 they provide.
+
+# Known Issues
+
+- The default output will source the `prelude.kak` plugin after the `auto-pairs.kak` plugin,
+  which will cause an error on-load. To fix this, move the `prelude.kak` config section in
+  the output kakrc before the `auto-pairs.kak` section.
 
 # TODO
 
