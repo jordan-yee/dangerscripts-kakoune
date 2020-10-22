@@ -55,6 +55,9 @@ if [ -f "$PLUGIN_CONFIG_FILE" ]; then
     else
         echo "Leaving existing config file as-is..."
     fi
+else
+    echo "Creating new config file..."
+    create_plugin_config_file
 fi
 
 # ------------------------------------------------------------------------------
@@ -88,4 +91,7 @@ if [ -f "$PLUGIN_INSTALL_FILE" ]; then
     else
         echo "Leaving existing install file as-is..."
     fi
+else
+    echo "Creating new install file..."
+    create_plugin_install_file
 fi
