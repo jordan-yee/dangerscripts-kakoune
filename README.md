@@ -3,54 +3,91 @@ A portable Kakoune configuration management project.
 
 # Overview
 
-The goal of this project is to package all of my Kakoune configuration in one place
-and provide a way to generate a kakrc compatible with any given system I want to
-run Kakoune on, which may not have the dependencies needed for all of the plugins
-included in a full configuration.
+The goal of this project is to package all desired Kakoune configuration in one
+place and provide a way to generate a subset configuration that's compatible
+with any given system, which may not have the dependencies needed for all the
+plugins included in a full configuration.
+
+This is useful for anyone working on air-gapped networks or restricted environments.
 
 # Installation
+
+## Managing This Repository
+
+Since this project uses submodules to manage plugins, there's a bit more to do when
+working with this repository than there would be for the typical repository that
+doesn't have submodules.
+
+Clone the repository and all submodules:
+```
+# (A) One-shot command:
+git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakoune.git
+
+# (B) If you forgot the --recurse-submodules flag, clone the submodules as well:
+git submodule update --init
+
+# (C) If the above command isn't working right...
+# 1. `init` submodules independently:
+git submodule init
+# 2. Update the clone URLs or disable certain submodules in .git/config:
+kak .git/config
+# 3. And finally, update the submodules:
+git submodule update
+```
+
+To update this project if you've previously cloned it:
+```
+# Get the changes to the main repository.
+git pull
+
+# Get the changes to the submodules.
+git submodule update --init --recursive
+```
+
+To update all plugin submodules, run:
+```
+git submodule update --remote
+```
+
+To update a specific plugin submodule:
+1. `cd` into the plugin submodule directory.
+2. Run the following commands:
+   ```
+   git fetch
+   git merge
+   ```
+
+After updating any plugin submodules, you will have to commit the changes in the
+parent (this) project's repository.
+
+To remove a plugin:
+```
+# Remove the plugin's submodule:
+# TODO
+
+# Remove the plugin's installation and configuration scripts:
+git rm ./plugin-installs/<plugin-installation-script>
+git rm ./plugin-configs/<plugin-configuration-script>
+```
+
+## Installing A Custom Kakoune Configuration
 
 While you can install or reinstall over an existing set of Kakoune config files,
 the suggested usage is to clear (`rm -rf ~/.config/kak/*`) any existing configs
 before running the install scripts to ensure that you have exactly and only what
-you need.
-
-Later, if you want to make changes to your config, make the changes in this repo
-so that they're backed up, clear the existing configs, and re-run the installation.
-This is not required, but will save time dealing with a lot of warning prompts.
-
-Clone the repository and all submodules:
-```
-git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakoune.git
-
-# If you forget the --recurse-submodules flag, clone the submodules:
-git submodule update --init
-
-# If the above command isn't working right, then init submodules independently:
-git submodule init
-# Then update the clone URLs in .git/config:
-kak .git/config
-# And finally, update the submodules:
-git submodule update
-```
-
-To load an explicitly defined subset of the included plugins:
-```
-git clone https://github.com/jordan-yee/dangerscripts-kakoune.git
-git submodule init <list> <of> <submodule> <names>
-git submodule update
-```
+you need. Later, if you want to make changes to your config, make the changes in
+this repo so that they're backed up, clear the existing configs, and re-run the
+installation. Clearing existing configs is not required, but will save time
+dealing with a lot of warning prompts.
 
 To interactively select and install plugins and a kakrc containing your custom
-configuration for the selected plugins:
+configuration (from ./plugin-configs directory) for the selected plugins:
 ```
-# chmod +x ./install-kakrc.sh
 ./install-kakrc.sh
 ```
 
 To install custom rc scripts and enable the local autoload directory:
 ```
-# chmod +x ./install-autoload-rc.sh
 ./install-autoload-rc.sh
 ```
 
@@ -101,5 +138,3 @@ they provide.
 - [ ] Handle load order for dependent plugins.
       - Current strategy: manually reorder kakrc sections after installation as needed.
 - [ ] Make verbose logging conditional.
-- [ ] Improve behavior when reinstalling on the system to add a new plugin.
-      (Only add what's needed)
