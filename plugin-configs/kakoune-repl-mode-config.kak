@@ -4,10 +4,6 @@
 source ~/.config/kak/plugins/kakoune-repl-mode/modules/repl-mode-tmux.kak
 source ~/.config/kak/plugins/kakoune-repl-mode/repl-mode.kak
 
-# Optionally set the window manager
-# This option will be set to 'tmux' by default
-set-option global repl_window_manager 'tmux'
-
 # Suggested user mode mapping
 map global user r ': enter-user-mode repl<ret>' -docstring "repl mode"
 
