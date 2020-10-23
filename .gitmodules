@@ -28,3 +28,6 @@
 [submodule "plugins/kakoune-git-mode"]
 	path = plugins/kakoune-git-mode
 	url = https://github.com/jordan-yee/kakoune-git-mode.git
+[submodule "plugins/kakoune-repl-mode"]
+	path = plugins/kakoune-repl-mode
+	url = https://github.com/jordan-yee/kakoune-repl-mode.git
