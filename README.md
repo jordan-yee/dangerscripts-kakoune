@@ -22,6 +22,9 @@ Clone the repository and all submodules:
 ```
 # (A) One-shot command:
 git clone --recurse-submodules https://github.com/jordan-yee/dangerscripts-kakoune.git
+# NOTE: You may run into trouble if you're on a network that messes with SSL certs.
+#       The quick-n-dirty solution is to disable SSL verifification for Git:
+#        git config --global http:sslVerify false
 
 # (B) If you forgot the --recurse-submodules flag, clone the submodules as well:
 git submodule update --init
