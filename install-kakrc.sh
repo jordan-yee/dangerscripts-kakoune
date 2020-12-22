@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This script generates a kakrc that starts with `./kakrc-base.kak`, and appends
 # specified plugin configs.
