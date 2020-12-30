@@ -135,9 +135,12 @@ they provide.
 - The default output will source the `prelude.kak` plugin after the `auto-pairs.kak` plugin,
   which will cause an error on-load. To fix this, move the `prelude.kak` config section in
   the output kakrc before the `auto-pairs.kak` section.
+- In order to ensure the mysticaltutor theme for the powerline plugin is used, remove the
+  default theme setting from the powerline config section in the output kakrc.
 
 # TODO
 
 - [ ] Handle load order for dependent plugins.
       - Current strategy: manually reorder kakrc sections after installation as needed.
 - [ ] Make verbose logging conditional.
+- [ ] Enable per-script selection of the rc/custom/ scripts to be copied over.
